@@ -54,9 +54,9 @@ const Hero = ({ data }) => {
           <Link to="/projects" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all shadow-xl hover:scale-105">
             Hemen Başla
           </Link>
-          <button className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-2xl font-bold text-lg transition-all">
+          <Link to="/about" className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-2xl font-bold text-lg transition-all">
             Daha Fazla Bilgi
-          </button>
+          </Link>
         </div>
       </div>
 

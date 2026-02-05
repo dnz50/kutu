@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Plus, Trash2, Save, LogOut } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { signOut } from 'firebase/auth';
-import { auth } from '../firebaseConfig';
+import { signOut } from "firebase/auth";
+import { auth } from "../firebaseConfig";
 
 const AdminPage = ({ data, onSave }) => {
   const [form, setForm] = useState(data);
@@ -40,12 +40,12 @@ const AdminPage = ({ data, onSave }) => {
         >
           <Plus /> Yeni Kart
         </button>
-        <button 
-  onClick={() => signOut(auth)} 
-  className="bg-red-500 text-white px-4 py-2 rounded-xl text-xs font-bold"
->
-  Çıkış Yap
-</button>
+        <button
+          onClick={() => signOut(auth)}
+          className="bg-red-500 text-white px-4 py-2 rounded-xl text-xs font-bold"
+        >
+          Çıkış Yap
+        </button>
       </div>
 
       <div className="grid md:grid-cols-2 gap-10 mb-10">
@@ -124,7 +124,7 @@ const AdminPage = ({ data, onSave }) => {
             <input
               className="border p-2 rounded flex-1"
               placeholder="Resim"
-              value={p.resim}
+              value={p.resim || ""}
               onChange={(e) => {
                 const nl = [...form.projeListesi];
                 nl[i].resim = e.target.value;
@@ -132,15 +132,16 @@ const AdminPage = ({ data, onSave }) => {
               }}
             />
             <input
-              className="border p-2 rounded flex-1"
+              className="border p-2 flex-1 border-blue-500  rounded-xl focus:border-blue-500"
               placeholder="Kutu Oyunu"
-              value={p.aciklama}
+              value={p.aciklama || ""}
               onChange={(e) => {
                 const nl = [...form.projeListesi];
-                nl[i].resim = e.target.value;
+                nl[i].aciklama = e.target.value;
                 setForm({ ...form, projeListesi: nl });
               }}
             />
+           
             <select
               className="border p-2 rounded"
               value={p.kategori}
